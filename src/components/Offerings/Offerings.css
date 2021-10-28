@@ -1,5 +1,6 @@
 .card-container {
-  height: 650px;
+  height: 630px;
+  position: relative;
 }
 
 .card-container:hover {
@@ -8,4 +9,19 @@
 
 .offer-title {
   color: #796FFC;
+}
+
+.c-body {
+  color: #312D65;
+}
+
+.country-name {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background-color: #796FFC;
+  color: #fff;
+  padding: 3px 10px;
+  font-weight: 500;
+  border-radius: 0 5px 5px 0;
 }
