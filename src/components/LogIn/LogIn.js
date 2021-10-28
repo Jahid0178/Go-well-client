@@ -2,10 +2,13 @@ import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
+import useAuth from "../../hooks/useAuth";
 import login from "../../images/login.svg";
 import "./LogIn.css";
 
 const LogIn = () => {
+  const { signInUsingGoogle } = useAuth();
+
   const googleIcon = <FontAwesomeIcon icon={faGoogle} />;
   return (
     <div className="login-container">
@@ -16,7 +19,9 @@ const LogIn = () => {
               <img src={login} style={{ width: 550 }} alt="" />
             </Col>
             <Col>
-              <Button>{googleIcon} Google Log In</Button>
+              <Button onClick={signInUsingGoogle}>
+                {googleIcon} Google Log In
+              </Button>
             </Col>
           </Row>
         </div>
