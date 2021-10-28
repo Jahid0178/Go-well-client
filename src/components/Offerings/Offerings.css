@@ -1,0 +1,11 @@
+.card-container {
+  height: 650px;
+}
+
+.card-container:hover {
+  box-shadow: 2px 1px 10px #ccc;
+}
+
+.offer-title {
+  color: #796FFC;
+}
