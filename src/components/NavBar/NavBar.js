@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
 import logo from "../../images/logo.png";
 
@@ -22,7 +22,9 @@ const NavBar = () => {
             <NavLink className="nav-link" to="/contact">
               Contact
             </NavLink>
-            <Button>Log In</Button>
+            <Link to="/login">
+              <Button>Log In</Button>
+            </Link>
           </Nav>
         </Container>
       </Navbar>
