@@ -1,0 +1,9 @@
+.contact-banner {
+  height: 40vh;
+  background: linear-gradient(0deg, rgba(120, 129, 167, 0.863), rgba(120, 129, 167, 0.863)),
+    url(../../images/about-us.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
