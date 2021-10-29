@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+.top-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #f96768;
+  font-weight: 700;
+}
+
+.best-rated {
+  color: #4F4B8B;
+  font-weight: 700;
+}
+
+.best-top-little-desc {
+  color: #a1a0b9;
+}
+
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+
+}
+
+.overlay-child {
+  position: absolute;
+  bottom: 10px;
+}
+
+.img-overlay:hover .bt-img {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.fas,
+.far {
+  color: #FFB609;
+}

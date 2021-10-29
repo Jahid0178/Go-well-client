@@ -15,11 +15,12 @@ const NavBar = () => {
   }
   return (
     <div>
-      <Navbar bg="light" variant="light">
+      <Navbar bg="light" variant="light" expand={true}>
         <Container>
           <Navbar.Brand href="#home">
             <img src={logo} alt="" />
           </Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
           <Nav className="ms-auto align-items-center">
             <NavLink className="nav-link" to="/home">
               Home
