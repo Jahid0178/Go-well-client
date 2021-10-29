@@ -38,6 +38,13 @@ const NavBar = () => {
             ) : (
               ""
             )}
+            {user.email ? (
+              <NavLink className="nav-link" to="/manageService">
+                Manage Service
+              </NavLink>
+            ) : (
+              ""
+            )}
             <Navbar.Text>
               <p className="ms-2 mb-0 me-2">{userName}</p>
             </Navbar.Text>

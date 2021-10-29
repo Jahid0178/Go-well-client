@@ -12,6 +12,7 @@ import Footer from "./components/Footer/Footer";
 import CheckOut from "./components/CheckOut/CheckOut";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AddNewService from "./components/AddNewService/AddNewService";
+import ManageService from "./components/ManageService/ManageService";
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path="/contact">
               <Contact></Contact>
+            </Route>
+            <Route path="/manageService">
+              <ManageService></ManageService>
             </Route>
             <Route path="/addNewService">
               <AddNewService></AddNewService>
