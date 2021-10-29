@@ -9,12 +9,14 @@ import "./LogIn.css";
 import { useHistory, useLocation } from "react-router";
 
 const LogIn = () => {
-  const { signInUsingGoogle, setUser, setError } = useAuth();
+  const { signInUsingGoogle, setUser, setError, isLoading, setIsLoading } =
+    useAuth();
   const location = useLocation();
   const history = useHistory();
   const redirect_url = location.state?.from || "/home";
 
   const handleGoogleLogin = () => {
+    setIsLoading(true);
     signInUsingGoogle()
       .then((result) => {
         const user = result.user;

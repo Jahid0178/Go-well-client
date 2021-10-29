@@ -25,7 +25,7 @@ const BestTop = () => {
           </div>
           <Row>
             {bestTop.map((best) => (
-              <Col lg={3} md={6} sm={12}>
+              <Col lg={3} md={6} sm={12} key={best._id}>
                 <Card className="bg-dark text-white img-overlay mb-3">
                   <Card.Img className="bt-img" src={best.img} />
                   <Card.ImgOverlay>
