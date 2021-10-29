@@ -1,11 +1,25 @@
 import React from "react";
-import "./PrivateRoute.css";
+import { Redirect, Route } from "react-router";
+import useAuth from "../../hooks/useAuth";
 
-const PrivateRoute = () => {
+const PrivateRoute = ({ children, ...rest }) => {
+  const { user } = useAuth();
   return (
-    <div>
-      <h2>This is private route</h2>
-    </div>
+    <Route
+      {...rest}
+      render={({ location }) =>
+        user.email ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
   );
 };
 

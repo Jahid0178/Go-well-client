@@ -6,9 +6,27 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import useAuth from "../../hooks/useAuth";
 import login from "../../images/login.svg";
 import "./LogIn.css";
+import { useHistory, useLocation } from "react-router";
 
 const LogIn = () => {
-  const { signInUsingGoogle } = useAuth();
+  const { signInUsingGoogle, setUser, setError } = useAuth();
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_url = location.state?.from || "/home";
+
+  const handleGoogleLogin = () => {
+    signInUsingGoogle()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        history.push(redirect_url);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+      });
+  };
+
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
 
@@ -45,7 +63,7 @@ const LogIn = () => {
 
                   <input type="submit" />
                 </form>
-                <Button className="mt-2" onClick={signInUsingGoogle}>
+                <Button className="mt-2" onClick={handleGoogleLogin}>
                   {googleIcon} Google Log In
                 </Button>
               </div>

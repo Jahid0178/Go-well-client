@@ -2,16 +2,24 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Card, Row, Button, Container, Col, CardGroup } from "react-bootstrap";
+import { useHistory } from "react-router";
 import "./Offerings.css";
 
 const Offerings = () => {
   const [offers, setOffers] = useState([]);
+  const history = useHistory();
+
   useEffect(() => {
     const url = "http://localhost:4000/booking";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOffers(data));
   }, []);
+
+  const handleBooking = (id) => {
+    history.push(`/checkOut/${id}`);
+  };
+
   return (
     <div>
       <Container>
@@ -32,7 +40,9 @@ const Offerings = () => {
                     <p className="country-name">{offer.country}</p>
                   </Card.Body>
                   <Card.Footer className="d-flex justify-content-between">
-                    <Button>Booking Now</Button>
+                    <Button onClick={() => handleBooking(offer._id)}>
+                      Booking Now
+                    </Button>
                   </Card.Footer>
                 </Card>
               </CardGroup>

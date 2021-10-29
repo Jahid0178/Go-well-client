@@ -20,15 +20,7 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
 
   const signInUsingGoogle = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        const user = result.user;
-        setUser(user);
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        setError(errorMessage);
-      });
+    return signInWithPopup(auth, googleProvider);
   };
 
   useEffect(() => {
@@ -58,6 +50,8 @@ const useFirebase = () => {
     error,
     signInUsingGoogle,
     logOut,
+    setUser,
+    setError,
   };
 };
 

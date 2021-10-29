@@ -9,6 +9,8 @@ import NotFound from "./components/NotFound/NotFound";
 import LogIn from "./components/LogIn/LogIn";
 import AuthProvider from "./contexts/AuthProvider";
 import Footer from "./components/Footer/Footer";
+import CheckOut from "./components/CheckOut/CheckOut";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -32,6 +34,9 @@ function App() {
             <Route path="/login">
               <LogIn></LogIn>
             </Route>
+            <PrivateRoute path="/checkOut/:id">
+              <CheckOut></CheckOut>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
