@@ -1,0 +1,17 @@
+.footer-container {
+  background-color: #282F3F;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li:hover {
+  color: #F96768;
+  cursor: pointer;
+}
+
+.iconColor {
+  color: #F96768;
+}

@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar/NavBar";
 import NotFound from "./components/NotFound/NotFound";
 import LogIn from "./components/LogIn/LogIn";
 import AuthProvider from "./contexts/AuthProvider";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>
