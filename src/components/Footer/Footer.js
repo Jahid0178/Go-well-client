@@ -14,7 +14,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col>
-            <img src={footerLogo} alt="" />
+            <img className="py-1" src={footerLogo} alt="" />
             <p className="text-white">
               choose any of the available demo's fully responsive, organized
               folder structure, fully customizable...
@@ -51,6 +51,13 @@ const Footer = () => {
             </ul>
           </Col>
         </Row>
+        <div className="p-3">
+          <p className="text-white text-center">
+            Copyright &#169; 2021{" "}
+            <span className="footer-logo-text">GoWell</span>. All rights
+            reserved.
+          </p>
+        </div>
       </Container>
     </div>
   );
