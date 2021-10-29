@@ -25,7 +25,6 @@ const Offerings = () => {
                   <Card.Body className="c-body">
                     <Card.Title>{offer.name}</Card.Title>
                     <Card.Text>{offer.package}</Card.Text>
-                    <Card.Text>{offer.description}</Card.Text>
                     <div className="d-flex justify-content-between">
                       <Card.Text>{offer.places}</Card.Text>
                       <p className="d-inline">Rating: {offer.rank}</p>
