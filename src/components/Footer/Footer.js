@@ -10,10 +10,10 @@ const Footer = () => {
     <FontAwesomeIcon className="iconColor" icon={faAngleDoubleRight} />
   );
   return (
-    <div className="footer-container py-4">
+    <div className="footer-container py-4 px-1">
       <Container>
         <Row>
-          <Col>
+          <Col lg={3} md={6} sm={12}>
             <img className="py-1" src={footerLogo} alt="" />
             <p className="text-white">
               choose any of the available demo's fully responsive, organized
@@ -21,7 +21,7 @@ const Footer = () => {
             </p>
             <h4 className="text-white">Social Icon</h4>
           </Col>
-          <Col>
+          <Col lg={3} md={6} sm={12}>
             <h4 className="text-white">Popular Tour Palaces</h4>
             <ul className="text-white">
               <li>{angleIcon} Canada Navy City</li>
@@ -31,7 +31,7 @@ const Footer = () => {
               <li>{angleIcon} Best Summer Camps</li>
             </ul>
           </Col>
-          <Col>
+          <Col lg={3} md={6} sm={12}>
             <h4 className="text-white">Useful Link</h4>
             <ul className="text-white">
               <li>{angleIcon} Our Team</li>
@@ -41,7 +41,7 @@ const Footer = () => {
               <li>{angleIcon} Teams and Services</li>
             </ul>
           </Col>
-          <Col>
+          <Col lg={3} md={6} sm={12}>
             <h4 className="text-white">Get In Touch</h4>
             <ul className="text-white">
               <li>{angleIcon} New York, NY 10012, US-52014</li>
