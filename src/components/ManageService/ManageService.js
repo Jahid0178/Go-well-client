@@ -2,16 +2,24 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Card, CardGroup, Col, Container, Row, Button } from "react-bootstrap";
+import { useHistory } from "react-router";
 import "./ManageService.css";
 
 const ManageService = () => {
   const [manageService, setManageService] = useState([]);
+  const history = useHistory();
+
   useEffect(() => {
     const url = "http://localhost:4000/booking";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setManageService(data));
   }, []);
+
+  const handleUpdateService = (id) => {
+    history.push(`/updateService/${id}`);
+  };
+
   return (
     <div className="pt-3">
       <Container>
@@ -32,7 +40,12 @@ const ManageService = () => {
                     </Card.Text>
                   </Card.Body>
                   <Card.Footer>
-                    <Button className="btn btn-success">Update</Button>
+                    <Button
+                      className="btn btn-success"
+                      onClick={() => handleUpdateService(manage._id)}
+                    >
+                      Update
+                    </Button>
                     <Button className="ms-2 btn btn-danger">Delete</Button>
                   </Card.Footer>
                 </Card>

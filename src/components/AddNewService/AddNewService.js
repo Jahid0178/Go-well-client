@@ -73,7 +73,7 @@ const AddNewService = () => {
                   onChange={(e) => setPackages(e.target.value)}
                   value={packages}
                   type="text"
-                  placeholder="Enter Package"
+                  placeholder="Enter Package Details"
                 />
               </Form.Group>
             </Row>

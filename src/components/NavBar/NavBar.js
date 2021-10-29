@@ -15,47 +15,49 @@ const NavBar = () => {
   }
   return (
     <div>
-      <Navbar bg="light" variant="light" expand={true}>
+      <Navbar bg="light" variant="light" expand="lg">
         <Container>
           <Navbar.Brand href="#home">
             <img src={logo} alt="" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Nav className="ms-auto align-items-center">
-            <NavLink className="nav-link" to="/home">
-              Home
-            </NavLink>
-            <NavLink className="nav-link" to="/about">
-              About US
-            </NavLink>
-            <NavLink className="nav-link" to="/contact">
-              Contact
-            </NavLink>
-            {user.email ? (
-              <NavLink className="nav-link" to="/addNewService">
-                Add New Service
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="offcanvasNavbar">
+            <Nav className="ms-auto align-items-center">
+              <NavLink className="nav-link" to="/home">
+                Home
               </NavLink>
-            ) : (
-              ""
-            )}
-            {user.email ? (
-              <NavLink className="nav-link" to="/manageService">
-                Manage Service
+              <NavLink className="nav-link" to="/about">
+                About US
               </NavLink>
-            ) : (
-              ""
-            )}
-            <Navbar.Text>
-              <p className="ms-2 mb-0 me-2">{userName}</p>
-            </Navbar.Text>
-            {!user.email ? (
-              <Link to="/login">
-                <Button>Log In</Button>
-              </Link>
-            ) : (
-              <Button onClick={logOut}>Log Out</Button>
-            )}
-          </Nav>
+              <NavLink className="nav-link" to="/contact">
+                Contact
+              </NavLink>
+              {user.email ? (
+                <NavLink className="nav-link" to="/addNewService">
+                  Add New Service
+                </NavLink>
+              ) : (
+                ""
+              )}
+              {user.email ? (
+                <NavLink className="nav-link" to="/manageService">
+                  Manage Service
+                </NavLink>
+              ) : (
+                ""
+              )}
+              <Navbar.Text>
+                <p className="ms-2 mb-0 me-2">{userName}</p>
+              </Navbar.Text>
+              {!user.email ? (
+                <Link to="/login">
+                  <Button>Log In</Button>
+                </Link>
+              ) : (
+                <Button onClick={logOut}>Log Out</Button>
+              )}
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>

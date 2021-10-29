@@ -13,6 +13,7 @@ import CheckOut from "./components/CheckOut/CheckOut";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AddNewService from "./components/AddNewService/AddNewService";
 import ManageService from "./components/ManageService/ManageService";
+import UpdateService from "./components/UpdateService/UpdateService";
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
             <PrivateRoute path="/manageService">
               <ManageService></ManageService>
             </PrivateRoute>
+            <Route path="/updateService/:id">
+              <UpdateService></UpdateService>
+            </Route>
             <Route path="/addNewService">
               <AddNewService></AddNewService>
             </Route>
