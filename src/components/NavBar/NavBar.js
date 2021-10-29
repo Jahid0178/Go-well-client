@@ -31,6 +31,13 @@ const NavBar = () => {
             <NavLink className="nav-link" to="/contact">
               Contact
             </NavLink>
+            {user.email ? (
+              <NavLink className="nav-link" to="/addNewService">
+                Add New Service
+              </NavLink>
+            ) : (
+              ""
+            )}
             <Navbar.Text>
               <p className="ms-2 mb-0 me-2">{userName}</p>
             </Navbar.Text>

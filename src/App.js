@@ -11,6 +11,7 @@ import AuthProvider from "./contexts/AuthProvider";
 import Footer from "./components/Footer/Footer";
 import CheckOut from "./components/CheckOut/CheckOut";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import AddNewService from "./components/AddNewService/AddNewService";
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route path="/contact">
               <Contact></Contact>
+            </Route>
+            <Route path="/addNewService">
+              <AddNewService></AddNewService>
             </Route>
             <Route path="/login">
               <LogIn></LogIn>
