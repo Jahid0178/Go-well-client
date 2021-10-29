@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./About.css";
 import aboutPerson from "../../images/about-person.png";
+import Works from "../Works/Works";
 
 const About = () => {
   return (
@@ -11,10 +12,10 @@ const About = () => {
       </div>
       <Container>
         <Row>
-          <Col lg={5}>
+          <Col lg={4} md={6} sm={12}>
             <img className="img-fluid" src={aboutPerson} alt="" />
           </Col>
-          <Col lg={7}>
+          <Col lg={8} md={6} sm={12}>
             <h2>About US</h2>
             <p>
               There are many variations of passages of Lorem Ipsum available,
@@ -27,6 +28,7 @@ const About = () => {
             </p>
           </Col>
         </Row>
+        <Works></Works>
       </Container>
     </div>
   );

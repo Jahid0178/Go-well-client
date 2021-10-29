@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+.reg-bg {
+  background-color: #7167FF;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.login-bg {
+  background-color: #F96768;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.addTour-bg {
+  background-color: #23BCB9;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.donate-bg {
+  background-color: #3EB750;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.works-title {
+  color: #f96768;
+  font-family: 'Dancing Script';
+  font-size: 2rem;
+}
