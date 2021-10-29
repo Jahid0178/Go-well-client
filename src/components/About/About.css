@@ -1,0 +1,11 @@
+.about-banner {
+  background: linear-gradient(0deg, rgba(120, 129, 167, 0.336), rgba(120, 129, 167, 0.966)),
+    url(../../images/about-us.jpg);
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  color: #fff;
+}
