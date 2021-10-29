@@ -14,7 +14,7 @@ const Works = () => {
         <h3 style={{ color: "#4F4B8B" }}>It Works</h3>
         <p style={{ color: "#A1A0BB" }}>How we works for you</p>
       </div>
-      <div className="d-flex align-items-center py-3">
+      <div className="d-flex justify-content-center align-items-center py-3">
         <Row>
           <Col lg={3} md={6} sm={12}>
             <div className="d-flex justify-content-center align-items-center reg-bg">
