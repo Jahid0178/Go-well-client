@@ -12,34 +12,6 @@ const AddNewService = () => {
   const [country, setCountry] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
-  const handleName = (e) => {
-    setName(e.target.value);
-  };
-
-  const handlePackageName = (e) => {
-    setPackages(e.target.value);
-  };
-
-  const handleDescription = (e) => {
-    setDescription(e.target.value);
-  };
-
-  const handlePlaces = (e) => {
-    setPlaces(e.target.value);
-  };
-
-  const handleImageUrl = (e) => {
-    setImageUrl(e.target.value);
-  };
-
-  const handleRanking = (e) => {
-    setRanking(e.target.value);
-  };
-
-  const handleCountryName = (e) => {
-    setCountry(e.target.value);
-  };
-
   const handleAddService = () => {
     const booking = {
       name,
@@ -57,9 +29,20 @@ const AddNewService = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify(booking),
-    }).then(() => {
-      console.log("fuck");
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          alert("Added Successfully");
+          setName("");
+          setPackages("");
+          setDescription("");
+          setPlaces("");
+          setRanking("");
+          setCountry("");
+          setImageUrl("");
+        }
+      });
   };
   return (
     <div>
@@ -77,7 +60,8 @@ const AddNewService = () => {
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>Name</Form.Label>
                 <Form.Control
-                  onChange={handleName}
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
                   type="text"
                   placeholder="Enter Name"
                 />
@@ -86,7 +70,8 @@ const AddNewService = () => {
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>Package</Form.Label>
                 <Form.Control
-                  onChange={handlePackageName}
+                  onChange={(e) => setPackages(e.target.value)}
+                  value={packages}
                   type="text"
                   placeholder="Enter Package"
                 />
@@ -98,7 +83,8 @@ const AddNewService = () => {
                 <Col>
                   <Form.Label>Description</Form.Label>
                   <Form.Control
-                    onChange={handleDescription}
+                    onChange={(e) => setDescription(e.target.value)}
+                    value={description}
                     placeholder="Enter Description"
                     as="textarea"
                     rows={3}
@@ -107,7 +93,8 @@ const AddNewService = () => {
                 <Col>
                   <Form.Label>Places</Form.Label>
                   <Form.Control
-                    onChange={handlePlaces}
+                    onChange={(e) => setPlaces(e.target.value)}
+                    value={places}
                     placeholder="Enter Places Duration"
                   />
                   <Form.Group
@@ -116,7 +103,8 @@ const AddNewService = () => {
                   >
                     <Form.Control
                       className="mt-2"
-                      onChange={handleImageUrl}
+                      onChange={(e) => setImageUrl(e.target.value)}
+                      value={imageUrl}
                       type="text"
                       placeholder="Image URL"
                     />
@@ -128,13 +116,18 @@ const AddNewService = () => {
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridCity">
                 <Form.Label>Rating</Form.Label>
-                <Form.Control onChange={handleRanking} type="number" />
+                <Form.Control
+                  onChange={(e) => setRanking(e.target.value)}
+                  value={ranking}
+                  type="number"
+                />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridZip">
                 <Form.Label>Country Name</Form.Label>
                 <Form.Control
-                  onChange={handleCountryName}
+                  onChange={(e) => setCountry(e.target.value)}
+                  value={country}
                   type="text"
                   placeholder="Enter Country Name"
                 />
