@@ -4,9 +4,11 @@ import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
 import logo from "../../images/logo.png";
 import useAuth from "../../hooks/useAuth";
+import Dropdown from "@restart/ui/esm/Dropdown";
 
 const NavBar = () => {
   const { user, logOut } = useAuth();
+  console.log(user);
   let userName = "";
   if (user.email) {
     userName = user.displayName;
@@ -49,6 +51,18 @@ const NavBar = () => {
               <Navbar.Text>
                 <p className="ms-2 mb-0 me-2">{userName}</p>
               </Navbar.Text>
+              <div>
+                {user.email ? (
+                  <img
+                    className="p-2"
+                    style={{ width: 60, borderRadius: "50%" }}
+                    src={user.photoURL}
+                    alt=""
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
               {!user.email ? (
                 <Link to="/login">
                   <Button>Log In</Button>

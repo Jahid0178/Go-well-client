@@ -36,7 +36,6 @@ const UpdateService = () => {
   }, []);
 
   const handleUpdateService = (e) => {
-    console.log("hi");
     const url = `http://localhost:4000/booking/${id}`;
     fetch(url, {
       method: "PUT",
