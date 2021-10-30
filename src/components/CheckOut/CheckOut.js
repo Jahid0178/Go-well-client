@@ -29,7 +29,7 @@ const CheckOut = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged === true) {
-          alert("Product Added Successfully");
+          alert("Booking Added Successfully");
         }
       });
   };
