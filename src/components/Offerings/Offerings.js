@@ -11,7 +11,7 @@ const Offerings = () => {
   const history = useHistory();
 
   useEffect(() => {
-    const url = "http://localhost:4000/booking";
+    const url = "https://morning-citadel-34200.herokuapp.com/booking";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOffers(data));

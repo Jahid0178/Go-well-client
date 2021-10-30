@@ -22,7 +22,7 @@ const ManageService = () => {
   };
 
   const handleDeleteService = (id) => {
-    const url = `http://localhost:4000/booking/${id}`;
+    const url = `https://morning-citadel-34200.herokuapp.com/booking/${id}`;
     fetch(url, {
       method: "DELETE",
     })

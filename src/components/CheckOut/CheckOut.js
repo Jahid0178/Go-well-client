@@ -11,14 +11,14 @@ const CheckOut = () => {
   const [orders, setOrders] = useState({});
 
   useEffect(() => {
-    const url = `http://localhost:4000/booking/${id}`;
+    const url = `https://morning-citadel-34200.herokuapp.com/booking/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
   const handleOrders = ({ _id, ...rest }) => {
-    const url = "http://localhost:4000/orders";
+    const url = "https://morning-citadel-34200.herokuapp.com/orders";
     fetch(url, {
       method: "POST",
       headers: {

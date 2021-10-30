@@ -8,7 +8,7 @@ import "./BestTop.css";
 const BestTop = () => {
   const [bestTop, setBestTop] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/best-top")
+    fetch("https://morning-citadel-34200.herokuapp.com/best-top")
       .then((res) => res.json())
       .then((data) => setBestTop(data));
   }, []);

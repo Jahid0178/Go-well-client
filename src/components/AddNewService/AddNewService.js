@@ -23,7 +23,7 @@ const AddNewService = () => {
       country,
     };
 
-    fetch("http://localhost:4000/booking", {
+    fetch("https://morning-citadel-34200.herokuapp.com/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
