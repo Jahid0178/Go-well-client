@@ -25,7 +25,13 @@ const CheckOut = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify(rest),
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged === true) {
+          alert("Product Added Successfully");
+        }
+      });
   };
 
   return (
