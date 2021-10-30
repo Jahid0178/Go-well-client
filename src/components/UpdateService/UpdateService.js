@@ -8,25 +8,67 @@ import "./UpdateService.css";
 const UpdateService = () => {
   const { id } = useParams();
   const [update, setUpdate] = useState([]);
+  const [updated, setUpdated] = useState({
+    name: "",
+    package: "",
+    description: "",
+    places: "",
+    img: "",
+    rank: "",
+    country: "",
+  });
   useEffect(() => {
     const url = `http://localhost:4000/booking/${id}`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setUpdate(data));
+      .then((data) => {
+        setUpdate(data);
+        setUpdated({
+          name: data.name,
+          package: data.package,
+          description: data.description,
+          places: data.places,
+          img: data.img,
+          rank: data.rank,
+          country: data.country,
+        });
+      });
   }, []);
+
+  const handleUpdateService = (e) => {
+    console.log("hi");
+    const url = `http://localhost:4000/booking/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updated),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          alert("Update Successfully");
+        }
+      });
+    e.preventDefault();
+  };
 
   return (
     <div className="my-3">
       <Container>
         <h5>ID No: {id}</h5>
-        <Form>
+        <Form onSubmit={handleUpdateService}>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Name"
-                value={update.name}
+                value={updated.name || ""}
+                onChange={(e) =>
+                  setUpdated({ ...updated, name: e.target.value })
+                }
               />
             </Form.Group>
 
@@ -35,7 +77,10 @@ const UpdateService = () => {
               <Form.Control
                 type="text"
                 placeholder="Enter Package Details"
-                value={update.package}
+                value={updated.package || ""}
+                onChange={(e) =>
+                  setUpdated({ ...updated, package: e.target.value })
+                }
               />
             </Form.Group>
           </Row>
@@ -51,7 +96,10 @@ const UpdateService = () => {
                   as="textarea"
                   placeholder="Description"
                   rows={3}
-                  value={update.description}
+                  value={updated.description || ""}
+                  onChange={(e) =>
+                    setUpdated({ ...updated, description: e.target.value })
+                  }
                 />
               </Form.Group>
             </Col>
@@ -60,14 +108,20 @@ const UpdateService = () => {
                 <Form.Label>Places</Form.Label>
                 <Form.Control
                   placeholder="Enter Places Duration"
-                  value={update.places}
+                  value={updated.places || ""}
+                  onChange={(e) =>
+                    setUpdated({ ...updated, places: e.target.value })
+                  }
                 />
               </Form.Group>
               <Form.Group>
                 <Form.Control
                   type="text"
                   placeholder="Image URL"
-                  value={update.img}
+                  value={updated.img}
+                  onChange={(e) =>
+                    setUpdated({ ...updated, img: e.target.value })
+                  }
                 />
               </Form.Group>
             </Col>
@@ -76,7 +130,13 @@ const UpdateService = () => {
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridState">
               <Form.Label>Rating</Form.Label>
-              <Form.Control type="number" value={update.rank} />
+              <Form.Control
+                type="number"
+                value={updated.rank || ""}
+                onChange={(e) =>
+                  setUpdated({ ...updated, rank: e.target.value })
+                }
+              />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridZip">
@@ -84,7 +144,10 @@ const UpdateService = () => {
               <Form.Control
                 type="text"
                 placeholder="Enter Country Name"
-                value={update.country}
+                value={updated.country || ""}
+                onChange={(e) =>
+                  setUpdated({ ...updated, country: e.target.value })
+                }
               />
             </Form.Group>
           </Row>
