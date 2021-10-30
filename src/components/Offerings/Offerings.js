@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Card, Row, Button, Container, Col, CardGroup } from "react-bootstrap";
+import Rating from "react-rating";
 import { useHistory } from "react-router";
 import "./Offerings.css";
 
@@ -35,13 +36,21 @@ const Offerings = () => {
                     <Card.Text>{offer.package}</Card.Text>
                     <div className="d-flex justify-content-between">
                       <Card.Text>{offer.places}</Card.Text>
-                      <p className="d-inline">Rating: {offer.rank}</p>
+                      <p className="d-inline">
+                        Rating:{" "}
+                        <Rating
+                          initialRating={offer.rank}
+                          emptySymbol="far fa-star"
+                          fullSymbol="fas fa-star"
+                          readonly
+                        />
+                      </p>
                     </div>
                     <p className="country-name">{offer.country}</p>
                   </Card.Body>
                   <Card.Footer className="d-flex justify-content-between">
                     <Button onClick={() => handleBooking(offer._id)}>
-                      Booking Now
+                      View Details
                     </Button>
                   </Card.Footer>
                 </Card>

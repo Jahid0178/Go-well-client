@@ -24,3 +24,8 @@
   font-weight: 500;
   border-radius: 0 5px 5px 0;
 }
+
+.fas,
+.far {
+  color: #FFB609;
+}

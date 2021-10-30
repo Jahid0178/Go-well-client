@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Card, CardGroup, Col, Container, Row, Button } from "react-bootstrap";
+import Rating from "react-rating";
 import { useHistory } from "react-router";
 import "./ManageService.css";
 
@@ -20,6 +21,23 @@ const ManageService = () => {
     history.push(`/updateService/${id}`);
   };
 
+  const handleDeleteService = (id) => {
+    const url = `http://localhost:4000/booking/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          window.confirm("Are you sure you want to delete");
+          const remainingService = manageService.filter(
+            (manage) => manage._id !== id
+          );
+          setManageService(remainingService);
+        }
+      });
+  };
+
   return (
     <div className="pt-3">
       <Container>
@@ -35,7 +53,12 @@ const ManageService = () => {
                       <p>{manage.package}</p>
                       <p>{manage.description}</p>
                       <p>{manage.places}</p>
-                      <p>{manage.rank}</p>
+                      <Rating
+                        initialRating={manage.rank}
+                        emptySymbol="far fa-star"
+                        fullSymbol="fas fa-star"
+                        readonly
+                      />
                       <p>{manage.country}</p>
                     </Card.Text>
                   </Card.Body>
@@ -46,7 +69,12 @@ const ManageService = () => {
                     >
                       Update
                     </Button>
-                    <Button className="ms-2 btn btn-danger">Delete</Button>
+                    <Button
+                      className="ms-2 btn btn-danger"
+                      onClick={() => handleDeleteService(manage._id)}
+                    >
+                      Delete
+                    </Button>
                   </Card.Footer>
                 </Card>
               </CardGroup>

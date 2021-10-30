@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Card, Container, Button } from "react-bootstrap";
+import Rating from "react-rating";
 import { useParams } from "react-router";
 import "./CheckOut.css";
 
@@ -29,9 +30,17 @@ const CheckOut = () => {
                 <p>Package: {orders.package}</p>
                 <p>Description: {orders.description}</p>
                 <p>Places: {orders.places}</p>
-                <p>Rank: {orders.rank}</p>
+                <p>
+                  Rank:{" "}
+                  <Rating
+                    initialRating={orders.rank}
+                    emptySymbol="far fa-star"
+                    fullSymbol="fas fa-star"
+                    readonly
+                  />
+                </p>
               </Card.Text>
-              <Button variant="primary">Booking</Button>
+              <Button variant="primary">Booking Now</Button>
             </Card.Body>
           </Card>
         </div>
