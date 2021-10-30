@@ -5,13 +5,10 @@ import { Card, Container, Button } from "react-bootstrap";
 import Rating from "react-rating";
 import { useParams } from "react-router";
 import "./CheckOut.css";
-import useAuth from "../../hooks/useAuth";
 
 const CheckOut = () => {
   const { id } = useParams();
   const [orders, setOrders] = useState({});
-  const { user } = useAuth();
-  const orderDetail = { ...orders, user };
 
   useEffect(() => {
     const url = `http://localhost:4000/booking/${id}`;
@@ -20,8 +17,15 @@ const CheckOut = () => {
       .then((data) => setOrders(data));
   }, []);
 
-  const handleOrders = () => {
-    console.log("hi");
+  const handleOrders = ({ _id, ...rest }) => {
+    const url = "http://localhost:4000/orders";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(rest),
+    });
   };
 
   return (
@@ -47,7 +51,7 @@ const CheckOut = () => {
                   />
                 </p>
               </Card.Text>
-              <Button onClick={() => handleOrders()} variant="primary">
+              <Button onClick={() => handleOrders(orders)} variant="primary">
                 Booking Now
               </Button>
             </Card.Body>

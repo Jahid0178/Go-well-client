@@ -4,11 +4,9 @@ import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
 import logo from "../../images/logo.png";
 import useAuth from "../../hooks/useAuth";
-import Dropdown from "@restart/ui/esm/Dropdown";
 
 const NavBar = () => {
   const { user, logOut } = useAuth();
-  console.log(user);
   let userName = "";
   if (user.email) {
     userName = user.displayName;

@@ -35,7 +35,9 @@ const Offerings = () => {
                     <Card.Title>{offer.name}</Card.Title>
                     <Card.Text>{offer.package}</Card.Text>
                     <div className="d-flex justify-content-between">
-                      <Card.Text>{offer.places}</Card.Text>
+                      <Card.Text className="places-text">
+                        {offer.places}
+                      </Card.Text>
                       <p className="d-inline">
                         Rating:{" "}
                         <Rating
@@ -48,7 +50,7 @@ const Offerings = () => {
                     </div>
                     <p className="country-name">{offer.country}</p>
                   </Card.Body>
-                  <Card.Footer className="d-flex justify-content-between">
+                  <Card.Footer className="d-flex justify-content-between border-0">
                     <Button onClick={() => handleBooking(offer._id)}>
                       View Details
                     </Button>
