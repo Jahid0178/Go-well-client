@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+.subscribe-container {
+  background-color: #E5E3ED;
+}
+
+.subscribe-title {
+  color: #F96768;
+  font-family: 'Dancing Script';
+}

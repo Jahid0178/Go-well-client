@@ -48,7 +48,9 @@ const ManageService = () => {
                 <Card className="my-2 manage-card-body">
                   <Card.Img variant="top" src={manage.img} />
                   <Card.Body>
-                    <Card.Title>{manage.name}</Card.Title>
+                    <Card.Title className="manage-service-title">
+                      {manage.name}
+                    </Card.Title>
                     <Card.Text>
                       <p>{manage.package}</p>
                       <p>{manage.description}</p>
@@ -62,7 +64,7 @@ const ManageService = () => {
                       <p>{manage.country}</p>
                     </Card.Text>
                   </Card.Body>
-                  <Card.Footer>
+                  <Card.Footer className="border-0">
                     <Button
                       className="btn btn-success"
                       onClick={() => handleUpdateService(manage._id)}

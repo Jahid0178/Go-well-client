@@ -18,7 +18,7 @@ const UpdateService = () => {
     country: "",
   });
   useEffect(() => {
-    const url = `http://localhost:4000/booking/${id}`;
+    const url = `https://morning-citadel-34200.herokuapp.com/booking/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
