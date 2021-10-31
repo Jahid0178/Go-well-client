@@ -14,10 +14,11 @@ const Subscribe = () => {
             the readable
           </p>
           <InputGroup className="mb-3 w-50 mx-auto">
-            <FormControl placeholder="Enter your email" />
-            <Button variant="secondary" id="button-addon2">
-              Subscribe
-            </Button>
+            <FormControl
+              className="subscribe-input"
+              placeholder="Enter your email"
+            />
+            <Button variant="btn subscribe-btn">Subscribe</Button>
           </InputGroup>
         </div>
       </Container>

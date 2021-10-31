@@ -8,3 +8,28 @@
   color: #F96768;
   font-family: 'Dancing Script';
 }
+
+.subscribe-input {
+  border: none;
+}
+
+.subscribe-input:focus {
+  border-color: none;
+  box-shadow: none;
+  border: 0;
+}
+
+.subscribe-btn {
+  color: #fff;
+  background-color: #F96768;
+  border: none;
+}
+
+.subscribe-btn:hover {
+  color: #fff;
+  box-shadow: 0px 1px 8px 1px rgba(249, 103, 104, 0.46);
+}
+
+.subscribe-btn:focus {
+  box-shadow: none;
+}

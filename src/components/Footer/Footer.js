@@ -19,7 +19,6 @@ const Footer = () => {
               choose any of the available demo's fully responsive, organized
               folder structure, fully customizable...
             </p>
-            <h4 className="text-white">Social Icon</h4>
           </Col>
           <Col lg={3} md={6} sm={12}>
             <h4 className="text-white">Popular Tour Palaces</h4>
